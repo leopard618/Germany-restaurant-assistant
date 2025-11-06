@@ -29,7 +29,7 @@ class AppConfig:
     LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
     
     OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-realtime-preview")
-    VOICE_MODEL = os.getenv("VOICE_MODEL", "alloy")
+    VOICE_MODEL = os.getenv("VOICE_MODEL", "nova")
     
     SYSTEM_PROMPT = """You are a professional and friendly restaurant booking assistant for customers in Germany. You speak English fluently and help customers make restaurant reservations.
 
