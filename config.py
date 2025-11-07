@@ -78,10 +78,9 @@ Remember: Speed and efficiency matter! Keep responses brief and collect all info
     
     @classmethod
     def validate(cls):
+        # Only validate what's needed for the agent
+        # Twilio credentials are only needed for webhook.py, not agent.py
         required = [
-            ("TWILIO_ACCOUNT_SID", cls.TWILIO_ACCOUNT_SID),
-            ("TWILIO_AUTH_TOKEN", cls.TWILIO_AUTH_TOKEN),
-            ("TWILIO_PHONE_NUMBER", cls.TWILIO_PHONE_NUMBER),
             ("LIVEKIT_URL", cls.LIVEKIT_URL),
             ("LIVEKIT_API_KEY", cls.LIVEKIT_API_KEY),
             ("LIVEKIT_API_SECRET", cls.LIVEKIT_API_SECRET),
