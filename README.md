@@ -67,10 +67,67 @@ Call your Twilio phone number to test the system.
 ## Configuration
 
 Edit `config.py` to customize:
-- Voice model (alloy, echo, fable, onyx, nova, shimmer)
+- Voice model (alloy, ash, ballad, coral, echo, sage, shimmer, verse, marin, cedar)
 - System prompt
 - Log level
 - Concurrent call limits
+
+## Deployment
+
+### Option 1: LiveKit Cloud (Requires Docker) ⚡
+
+**Best option for low latency!** Deploy your agent directly to LiveKit Cloud.
+
+**Note:** LiveKit Cloud requires Docker. If you prefer not to use Docker, see Option 2 below.
+
+See [LIVEKIT_CLOUD_DEPLOYMENT.md](LIVEKIT_CLOUD_DEPLOYMENT.md) for detailed instructions.
+
+**Quick Start:**
+```bash
+# Install LiveKit CLI
+npm install -g livekit-cli
+
+# Authenticate
+lk cloud auth
+
+# Deploy agent (requires Dockerfile)
+lk agent deploy
+```
+
+**Benefits:**
+- ✅ Lowest latency (agents run on LiveKit infrastructure)
+- ✅ Geographic affinity (agents placed close to users)
+- ✅ Auto-scaling
+- ✅ Managed infrastructure
+- ⚠️ Requires Docker
+
+### Option 2: Deploy Without Docker (Recommended for Simplicity) 🚀
+
+**No Docker required!** Deploy directly to platforms that support Python.
+
+**Best Options:**
+- **Render.com** - Easy deployment, free tier available
+- **Railway.app** - Simple UI, good developer experience
+- **Fly.io** - Global distribution, low latency
+- **Heroku** - Traditional PaaS, well-documented
+- **DigitalOcean App Platform** - Good pricing
+- **AWS/GCP/Azure** - Full control, custom infrastructure
+
+See [DEPLOYMENT_NO_DOCKER.md](DEPLOYMENT_NO_DOCKER.md) for detailed instructions on all platforms.
+
+**Quick Start (Render.com):**
+1. Push code to GitHub
+2. Go to https://render.com
+3. Create Web Service → Connect GitHub → `python webhook.py`
+4. Create Background Worker → Same repo → `python agent.py`
+5. Add environment variables
+6. Deploy!
+
+**Benefits:**
+- ✅ No Docker knowledge required
+- ✅ Direct Python deployment
+- ✅ Easy to set up
+- ✅ Free tiers available
 
 ## License
 

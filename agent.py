@@ -18,7 +18,6 @@ def _create_realtime_model():
     return openai.realtime.RealtimeModel(
         voice=AppConfig.VOICE_MODEL,
         temperature=0.8,
-        modalities=["text", "audio"],
         turn_detection=TurnDetection(
             type="server_vad",
             threshold=0.8,
